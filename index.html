@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zakaria's Vue Learning Report</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <h1>📘 Zakaria’s Vue.js Learning Report</h1>
+  <p>This report documents my learning journey with Vue.js, from syntax to building real-world projects.</p>
+
+
+<div class="tabs">
+  <button onclick="showLog('log2')">June 2</button>
+  <button onclick="showLog('log3')">June 3</button>
+  <button onclick="showLog('log4')">June 4</button>
+  <!-- Add more buttons as needed -->
+</div>
+
+
+  <!-- June 2 log -->
+  <div class="section" id="log2">
+    <h2>📅 June 2, 2025 — Discovering Vue.js & First Component</h2>
+
+    <h3>✅ What I Did</h3>
+    <ul>
+      <li>Read the official Vue.js introduction to understand the basics (reactivity, components, data binding, etc.)
+      </li>
+      <li>Installed the development environment with Vite + Vue 3</li>
+      <li>Created a first component in <code>App.vue</code> containing a dynamic message and a button</li>
+      <li>Implemented a function to reverse the displayed name using Vue reactivity</li>
+    </ul>
+
+    <h3>💡 Component Screenshot</h3>
+    <img src="img/2-juin---1.jpg" alt="First Vue.js component - name reversal" />
+
+    <h3>📁 Deliverable</h3>
+    <ul>
+      <li>Designed a summary-style page explaining what I learned, with a button to generate a PDF using:</li>
+      <code>html2canvas</code> + <code>jsPDF</code>
+      <li>PDF includes a signature (name + image) dynamically generated without altering the page view</li>
+      <li><a href="https://drive.google.com/file/d/1YrAExmf2jyQ1qlj59YLB5HqllnoZIK6h/view?usp=sharing"
+          target="_blank">📎 View Generated PDF</a></li>
+    </ul>
+
+    <h3>💡 Page Screenshot</h3>
+    <img src="img/2-juin---2.jpg" alt="PDF generation summary page" />
+
+    <h3>🧠 What I Understood</h3>
+    <p>
+      Vue.js is very fluid to use. I found it interesting to see how data is automatically bound to the view (data
+      binding).
+      <br>For now, coding "by hand" feels more intuitive, but I expect this will change with practice and as I explore
+      more advanced features.
+    </p>
+
+    <h3>💬 Email Sent to Mr. Rachid</h3>
+    <blockquote style="background:#f4f4f4;padding:10px;border-left:4px solid #ccc;">
+      Bonjour Mr. Rachid,<br><br>
+      Merci encore pour ton message de bienvenue 👋<br><br>
+      J’ai bien suivi les étapes proposées pour cette première journée et je te fais un retour rapide sur ce que j’ai
+      réalisé...
+      <br><br>
+      <em>Zakaria</em>
+    </blockquote>
+  </div>
+
+
+
+  <!-- June 3 log -->
+  <div class="section" id="log3">
+    <h2>📅 June 3, 2025 — Phase 1: Page Setup in Vue</h2>
+
+    <h3>✅ What I Did</h3>
+    <ul>
+      <li>Created a new Vue project using Vite</li>
+      <li>Installed Vue Router</li>
+      <li>Created 4 basic pages: Home, Login, QuizStart, Result</li>
+      <li>Updated <code>App.vue</code> with router navigation</li>
+    </ul>
+
+    <h3>🧠 What I Understood</h3>
+    <ul>
+      <li>How <code>&lt;router-view&gt;</code> renders active page components</li>
+      <li>How <code>&lt;router-link&gt;</code> is used instead of anchor tags</li>
+      <li>Each page is a separate <code>.vue</code> component</li>
+    </ul>
+
+    <h3>🧪 Code Sample from App.vue</h3>
+    <pre><code>&lt;template&gt;
+  &lt;div&gt;
+    &lt;nav&gt;
+      &lt;router-link to="/"&gt;Home&lt;/router-link&gt; |
+      &lt;router-link to="/login"&gt;Login&lt;/router-link&gt; |
+      &lt;router-link to="/quiz"&gt;Quiz&lt;/router-link&gt; |
+      &lt;router-link to="/result"&gt;Result&lt;/router-link&gt;
+    &lt;/nav&gt;
+    &lt;router-view /&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+
+    <h3>🧭 Code Sample from router/index.js</h3>
+    <pre><code>import { createRouter, createWebHistory } from 'vue-router';
+import Home from '../pages/Home.vue';
+import About from '../pages/About.vue';
+import Login from '../pages/Login.vue';
+import QuizStart from '../pages/QuizStart.vue';
+import Result from '../pages/Result.vue';
+
+const routes = [
+  { path: '/', name: 'Home', component: Home },
+  { path: '/about', name: 'About', component: About },
+  { path: '/login', name: 'Login', component: Login },
+  { path: '/quiz', name: 'QuizStart', component: QuizStart },
+  { path: '/result', name: 'Result', component: Result }
+];
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes
+});
+
+export default router;
+</code></pre>
+
+    <h3>💡 Screenshot</h3>
+    <img src="img/3-juin---1.jpg" alt="Navigation demo in Vue" />
+
+    <h3>⏭️ What’s Next</h3>
+    <p>Start building the content and functionality for each page:</p>
+    <ul>
+      <li><code>Login.vue</code> — create login form and handle authentication logic</li>
+      <li><code>Home.vue</code> — design the homepage layout</li>
+      <li><code>QuizStart.vue</code> — implement quiz start UI and logic</li>
+      <li><code>Result.vue</code> — display quiz results and feedback</li>
+    </ul>
+
+  </div>
+
+
+<!-- June 4 log -->
+<div class="section" id="log4">
+  <h2>📅 June 4, 2025 — Phase 2: Enhancing VueQuiz Battle with Login & Results</h2>
+
+  <h3>✅ What I Did</h3>
+  <ul>
+    <li>Developed a dynamic Home page displaying 8 quiz categories with sleek icons and Tailwind styling</li>
+    <li>Implemented Login page with email/password authentication against static JSON user data</li>
+    <li>Created Quiz Start page to introduce the challenge before beginning the quiz</li>
+    <li>Built Results page showing total questions, correct answers, and percentage score</li>
+    <li>Configured Vue Router for smooth navigation between pages</li>
+    <li>Added localStorage-based session handling for simple user state management</li>
+  </ul>
+
+  <p><em>Note: The current implementation is mainly structural—there is no real quiz data, user data, or quizzes yet. Everything shown is a prototype or mockup of how things will look and work. The actual quiz content, real authentication, and dynamic data will be added in upcoming development steps.</em></p>
+
+  <h3>🧠 What I Understood</h3>
+  <ul>
+    <li>How to use Vue Router for multiple page navigation in a SPA</li>
+    <li>How to validate user input and authenticate against local data in Vue</li>
+    <li>Managing user session state with localStorage</li>
+    <li>Using Heroicons and Tailwind CSS for responsive, visually appealing UI components</li>
+  </ul>
+
+  <h3>🧪 Code Sample — Login Validation</h3>
+  <pre><code>const users = await fetch('/data/users.json').then(res =&gt; res.json());
+const user = users.find(u =&gt; u.email === this.email);
+if (user &amp;&amp; user.password === this.password) {
+  localStorage.setItem('user', JSON.stringify(user));
+  this.$router.push('/quiz');
+} else {
+  alert('Invalid email or password');
+}</code></pre>
+
+  <h3>💡 Screenshots</h3>
+  <img src="img/4-juin---1.jpg" alt="Home page with quiz categories" />
+  <img src="img/4-juin---2.jpg" alt="Login page" />
+  <img src="img/4-juin---3.jpg" alt="Quiz start page" />
+  <img src="img/4-juin---4.jpg" alt="Results page" />
+
+  <h3>⏭️ What’s Next</h3>
+  <p>Plan to add backend authentication, dynamic quiz questions, and real-time scoring.</p>
+  <ol>
+    <li>Load quiz data from <code>quizzes.json</code></li>
+    <li>Show available quizzes by category</li>
+    <li>Display a quiz (questions, multiple choice answers)</li>
+    <li>Add a timer (<code>Timer.vue</code> component)</li>
+  </ol>
+</div>
+
+
+
+
+  <footer>
+    <p>Maintained by Zakaria Tanan — <a href="mailto:tananzakaria630@gmail.com">tananzakaria630@gmail.com</a></p>
+  </footer>
+
+</body>
+
+</html>
+
+<script>
+  function showLog(id) {
+    document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+  }
+
+  // Show June 2 log by default
+  window.onload = () => showLog('log2');
+</script>
