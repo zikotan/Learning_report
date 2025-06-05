@@ -11,7 +11,7 @@
 <body>
 
   <h1>📘 Zakaria’s Vue.js Learning Report</h1>
-  <p>This report documents my learning journey with Vue.js, from syntax to building real-world projects.</p>
+  <p style="text-align: center;">This report documents my learning journey with Vue.js, from syntax to building real-world projects.</p>
 
 
 <div class="tabs">
@@ -168,14 +168,36 @@ export default router;
   </ul>
 
   <h3>🧪 Code Sample — Login Validation</h3>
-  <pre><code>const users = await fetch('/data/users.json').then(res =&gt; res.json());
-const user = users.find(u =&gt; u.email === this.email);
-if (user &amp;&amp; user.password === this.password) {
-  localStorage.setItem('user', JSON.stringify(user));
-  this.$router.push('/quiz');
-} else {
-  alert('Invalid email or password');
-}</code></pre>
+  <pre><code>import users from "@/src/data/users.json";
+
+export default {
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    handleLogin() {
+      const foundUser = users.find(
+        (user) =&gt;
+          user.email.toLowerCase() === this.email.trim().toLowerCase() &amp;&amp;
+          user.password === this.password
+      );
+
+      if (foundUser) {
+        localStorage.setItem("user", foundUser.email);
+        alert(`Welcome, ${foundUser.username}! You are now logged in.`);
+        this.email = "";
+        this.password = "";
+        this.$router.push("/quiz");
+      } else {
+        alert("Invalid email or password.");
+      }
+    },
+  },
+};
+</code></pre>
 
   <h3>💡 Screenshots</h3>
   <img src="img/4-juin---1.jpg" alt="Home page with quiz categories" />
@@ -193,9 +215,7 @@ if (user &amp;&amp; user.password === this.password) {
   </ol>
 </div>
 
-
-
-
+  
   <footer>
     <p>Maintained by Zakaria Tanan — <a href="mailto:tananzakaria630@gmail.com">tananzakaria630@gmail.com</a></p>
   </footer>
