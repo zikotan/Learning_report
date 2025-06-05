@@ -11,15 +11,17 @@
 <body>
 
   <h1>📘 Zakaria’s Vue.js Learning Report</h1>
-  <p style="text-align: center;">This report documents my learning journey with Vue.js, from syntax to building real-world projects.</p>
+  <p style="text-align: center;">This report documents my learning journey with Vue.js, from syntax to building
+    real-world projects.</p>
 
 
-<div class="tabs">
-  <button onclick="showLog('log2')">June 2</button>
-  <button onclick="showLog('log3')">June 3</button>
-  <button onclick="showLog('log4')">June 4</button>
-  <!-- Add more buttons as needed -->
-</div>
+  <div class="tabs">
+    <button onclick="showLog('log2')">June 2</button>
+    <button onclick="showLog('log3')">June 3</button>
+    <button onclick="showLog('log4')">June 4</button>
+    <button onclick="showLog('log5')">June 5</button>
+    <!-- Add more buttons as needed -->
+  </div>
 
 
   <!-- June 2 log -->
@@ -143,32 +145,34 @@ export default router;
   </div>
 
 
-<!-- June 4 log -->
-<div class="section" id="log4">
-  <h2>📅 June 4, 2025 — Phase 2: Enhancing VueQuiz Battle with Login & Results</h2>
+  <!-- June 4 log -->
+  <div class="section" id="log4">
+    <h2>📅 June 4, 2025 — Phase 2: Enhancing VueQuiz Battle with Login & Results</h2>
 
-  <h3>✅ What I Did</h3>
-  <ul>
-    <li>Developed a dynamic Home page displaying 8 quiz categories with sleek icons and Tailwind styling</li>
-    <li>Implemented Login page with email/password authentication against static JSON user data</li>
-    <li>Created Quiz Start page to introduce the challenge before beginning the quiz</li>
-    <li>Built Results page showing total questions, correct answers, and percentage score</li>
-    <li>Configured Vue Router for smooth navigation between pages</li>
-    <li>Added localStorage-based session handling for simple user state management</li>
-  </ul>
+    <h3>✅ What I Did</h3>
+    <ul>
+      <li>Developed a dynamic Home page displaying 8 quiz categories with sleek icons and Tailwind styling</li>
+      <li>Implemented Login page with email/password authentication against static JSON user data</li>
+      <li>Created Quiz Start page to introduce the challenge before beginning the quiz</li>
+      <li>Built Results page showing total questions, correct answers, and percentage score</li>
+      <li>Configured Vue Router for smooth navigation between pages</li>
+      <li>Added localStorage-based session handling for simple user state management</li>
+    </ul>
 
-  <p><em>Note: The current implementation is mainly structural—there is no real quiz data, user data, or quizzes yet. Everything shown is a prototype or mockup of how things will look and work. The actual quiz content, real authentication, and dynamic data will be added in upcoming development steps.</em></p>
+    <p><em>Note: The current implementation is mainly structural—there is no real quiz data, user data, or quizzes yet.
+        Everything shown is a prototype or mockup of how things will look and work. The actual quiz content, real
+        authentication, and dynamic data will be added in upcoming development steps.</em></p>
 
-  <h3>🧠 What I Understood</h3>
-  <ul>
-    <li>How to use Vue Router for multiple page navigation in a SPA</li>
-    <li>How to validate user input and authenticate against local data in Vue</li>
-    <li>Managing user session state with localStorage</li>
-    <li>Using Heroicons and Tailwind CSS for responsive, visually appealing UI components</li>
-  </ul>
+    <h3>🧠 What I Understood</h3>
+    <ul>
+      <li>How to use Vue Router for multiple page navigation in a SPA</li>
+      <li>How to validate user input and authenticate against local data in Vue</li>
+      <li>Managing user session state with localStorage</li>
+      <li>Using Heroicons and Tailwind CSS for responsive, visually appealing UI components</li>
+    </ul>
 
-  <h3>🧪 Code Sample — Login Validation</h3>
-  <pre><code>import users from "@/src/data/users.json";
+    <h3>🧪 Code Sample — Login Validation</h3>
+    <pre><code>import users from "@/src/data/users.json";
 
 export default {
   data() {
@@ -199,23 +203,84 @@ export default {
 };
 </code></pre>
 
-  <h3>💡 Screenshots</h3>
-  <img src="img/4-juin---1.jpg" alt="Home page with quiz categories" />
-  <img src="img/4-juin---2.jpg" alt="Login page" />
-  <img src="img/4-juin---3.jpg" alt="Quiz start page" />
-  <img src="img/4-juin---4.jpg" alt="Results page" />
+    <h3>💡 Screenshots</h3>
+    <img src="img/4-juin---1.jpg" alt="Home page with quiz categories" />
+    <img src="img/4-juin---2.jpg" alt="Login page" />
+    <img src="img/4-juin---3.jpg" alt="Quiz start page" />
+    <img src="img/4-juin---4.jpg" alt="Results page" />
 
-  <h3>⏭️ What’s Next</h3>
-  <p>Plan to add backend authentication, dynamic quiz questions, and real-time scoring.</p>
-  <ol>
-    <li>Load quiz data from <code>quizzes.json</code></li>
-    <li>Show available quizzes by category</li>
-    <li>Display a quiz (questions, multiple choice answers)</li>
-    <li>Add a timer (<code>Timer.vue</code> component)</li>
-  </ol>
-</div>
+    <h3>⏭️ What’s Next</h3>
+    <p>Plan to add backend authentication, dynamic quiz questions, and real-time scoring.</p>
+    <ol>
+      <li>Load quiz data from <code>quizzes.json</code></li>
+      <li>Show available quizzes by category</li>
+      <li>Display a quiz (questions, multiple choice answers)</li>
+      <li>Add a timer (<code>Timer.vue</code> component)</li>
+    </ol>
+  </div>
 
-  
+  <!-- June 5 log -->
+  <div class="section" id="log5">
+    <h2>📅 June 5, 2025 — Phase 2: Dynamic Quizzes & Questions, Live Login State</h2>
+    <h3>✅ What I Did</h3>
+    <ul>
+      <li>Created <code>quizzes.json</code> with 3 quizzes per category and integrated it into
+        <code>QuizStart.vue</code> to show relevant quizzes dynamically based on selected category ID
+      </li>
+      <li>Added <code>questions.json</code> with 15 questions per quiz, displayed dynamically in a new
+        <code>QuizQuestion.vue</code> component
+      </li>
+      <li>Connected quiz selection to question loading by passing quiz ID through Vue Router</li>
+      <li>Implemented <strong>auth.js</strong> utility module to manage login state and logout functionality</li>
+      <li>Used <code>listenLoginState()</code> with window events to update login status live across all components
+        without refreshing the page</li>
+      <li>Conditionally showed or hid UI elements based on the login state stored in <code>localStorage</code></li>
+    </ul>
+    <h3>🧠 What I Understood</h3>
+    <ul>
+      <li>How to use dynamic routing and route parameters to control quiz/question content</li>
+      <li>How to structure and consume local JSON files as mock databases</li>
+      <li>How to make Vue applications behave like true SPAs with reactive login/logout without page reloads</li>
+      <li>How to centralize shared logic (like auth) for clean reusable code across components</li>
+    </ul>
+    <h3>🧪 Code Sample — auth.js Logic</h3>
+    <pre><code>// src/utils/auth.js 
+export function isLoggedIn() { 
+  return !!localStorage.getItem("user"); 
+}
+export function logout(router) {
+  localStorage.removeItem("user");
+  router.push("/");
+}
+
+export function listenLoginState(callback) {
+  const update = () => callback(isLoggedIn());
+  window.addEventListener("storage", update);
+  window.addEventListener("user-logged-in", update);
+  return () => {
+    window.removeEventListener("storage", update);
+    window.removeEventListener("user-logged-in", update);
+  };
+}
+</code></pre>
+
+    <h3>💡 Screenshots</h3>
+    <img src="img/5-juin---1.jpg" alt="Quiz list per category" /> 
+    <img src="img/5-juin---2.jpg" alt="Questions loaded based on quiz ID" /> 
+    <img src="img/5-juin---3.jpg" alt="Conditional display depending on login state" /> 
+    <h3>⏭️ What’s Next</h3>
+    <p>Continue improving interactivity, results calculation, and page access control:</p>
+    <ol>
+      <li>Allow users to select answers and submit quiz data (no backend — stored in-memory or in
+        <code>localStorage</code>)
+      </li>
+      <li>Use submitted answers to calculate real-time results in <code>Result.vue</code></li>
+      <li>Protect routes like <code>/quiz</code> and <code>/question</code> — prevent access without category/quiz ID
+        and login</li>
+      <li>Add a responsive <strong>footer</strong> and finalize styling tweaks</li>
+    </ol>
+  </div>
+
   <footer>
     <p>Maintained by Zakaria Tanan — <a href="mailto:tananzakaria630@gmail.com">tananzakaria630@gmail.com</a></p>
   </footer>
@@ -231,5 +296,5 @@ export default {
   }
 
   // Show June 2 log by default
-  window.onload = () => showLog('log2');
+  window.onload = () => showLog('log5');
 </script>
