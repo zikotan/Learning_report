@@ -10,7 +10,7 @@
 
 <body>
 
-  <h1>📘 Zakaria’s Vue.js Learning Report</h1>
+  <h1>📘 Zakaria’s Vue Js Learning Report</h1>
   <p style="text-align: center;">This report documents my learning journey with Vue.js, from syntax to building
     real-world projects.</p>
 
@@ -20,6 +20,7 @@
     <button onclick="showLog('log3')">June 3</button>
     <button onclick="showLog('log4')">June 4</button>
     <button onclick="showLog('log5')">June 5</button>
+    <button onclick="showLog('log6')">June 6</button>
     <!-- Add more buttons as needed -->
   </div>
 
@@ -28,7 +29,7 @@
   <div class="section" id="log2">
     <h2>📅 June 2, 2025 — Discovering Vue.js & First Component</h2>
 
-    <h3>✅ What I Did</h3>
+    <h3>✅ Accomplishments</h3>
     <ul>
       <li>Read the official Vue.js introduction to understand the basics (reactivity, components, data binding, etc.)
       </li>
@@ -52,7 +53,7 @@
     <h3>💡 Page Screenshot</h3>
     <img src="img/2-juin---2.jpg" alt="PDF generation summary page" />
 
-    <h3>🧠 What I Understood</h3>
+    <h3>🧠 Key Learnings</h3>
     <p>
       Vue.js is very fluid to use. I found it interesting to see how data is automatically bound to the view (data
       binding).
@@ -77,7 +78,7 @@
   <div class="section" id="log3">
     <h2>📅 June 3, 2025 — Phase 1: Page Setup in Vue</h2>
 
-    <h3>✅ What I Did</h3>
+    <h3>✅ Accomplishments</h3>
     <ul>
       <li>Created a new Vue project using Vite</li>
       <li>Installed Vue Router</li>
@@ -85,7 +86,7 @@
       <li>Updated <code>App.vue</code> with router navigation</li>
     </ul>
 
-    <h3>🧠 What I Understood</h3>
+    <h3>🧠 Key Learnings</h3>
     <ul>
       <li>How <code>&lt;router-view&gt;</code> renders active page components</li>
       <li>How <code>&lt;router-link&gt;</code> is used instead of anchor tags</li>
@@ -133,7 +134,7 @@ export default router;
     <h3>💡 Screenshot</h3>
     <img src="img/3-juin---1.jpg" alt="Navigation demo in Vue" />
 
-    <h3>⏭️ What’s Next</h3>
+    <h3>⏭️ Next Steps</h3>
     <p>Start building the content and functionality for each page:</p>
     <ul>
       <li><code>Login.vue</code> — create login form and handle authentication logic</li>
@@ -149,7 +150,7 @@ export default router;
   <div class="section" id="log4">
     <h2>📅 June 4, 2025 — Phase 2: Enhancing VueQuiz Battle with Login & Results</h2>
 
-    <h3>✅ What I Did</h3>
+    <h3>✅ Accomplishments</h3>
     <ul>
       <li>Developed a dynamic Home page displaying 8 quiz categories with sleek icons and Tailwind styling</li>
       <li>Implemented Login page with email/password authentication against static JSON user data</li>
@@ -163,7 +164,7 @@ export default router;
         Everything shown is a prototype or mockup of how things will look and work. The actual quiz content, real
         authentication, and dynamic data will be added in upcoming development steps.</em></p>
 
-    <h3>🧠 What I Understood</h3>
+    <h3>🧠 Key Learnings</h3>
     <ul>
       <li>How to use Vue Router for multiple page navigation in a SPA</li>
       <li>How to validate user input and authenticate against local data in Vue</li>
@@ -209,7 +210,7 @@ export default {
     <img src="img/4-juin---3.jpg" alt="Quiz start page" />
     <img src="img/4-juin---4.jpg" alt="Results page" />
 
-    <h3>⏭️ What’s Next</h3>
+    <h3>⏭️ Next Steps</h3>
     <p>Plan to add backend authentication, dynamic quiz questions, and real-time scoring.</p>
     <ol>
       <li>Load quiz data from <code>quizzes.json</code></li>
@@ -222,7 +223,7 @@ export default {
   <!-- June 5 log -->
   <div class="section" id="log5">
     <h2>📅 June 5, 2025 — Phase 2: Dynamic Quizzes & Questions, Live Login State</h2>
-    <h3>✅ What I Did</h3>
+    <h3>✅ Accomplishments</h3>
     <ul>
       <li>Created <code>quizzes.json</code> with 3 quizzes per category and integrated it into
         <code>QuizStart.vue</code> to show relevant quizzes dynamically based on selected category ID
@@ -236,7 +237,7 @@ export default {
         without refreshing the page</li>
       <li>Conditionally showed or hid UI elements based on the login state stored in <code>localStorage</code></li>
     </ul>
-    <h3>🧠 What I Understood</h3>
+    <h3>🧠 Key Learnings</h3>
     <ul>
       <li>How to use dynamic routing and route parameters to control quiz/question content</li>
       <li>How to structure and consume local JSON files as mock databases</li>
@@ -265,10 +266,10 @@ export function listenLoginState(callback) {
 </code></pre>
 
     <h3>💡 Screenshots</h3>
-    <img src="img/5-juin---1.jpg" alt="Quiz list per category" /> 
-    <img src="img/5-juin---2.jpg" alt="Questions loaded based on quiz ID" /> 
-    <img src="img/5-juin---3.jpg" alt="Conditional display depending on login state" /> 
-    <h3>⏭️ What’s Next</h3>
+    <img src="img/5-juin---1.jpg" alt="Quiz list per category" />
+    <img src="img/5-juin---2.jpg" alt="Questions loaded based on quiz ID" />
+    <img src="img/5-juin---3.jpg" alt="Conditional display depending on login state" />
+    <h3>⏭️ Next Steps</h3>
     <p>Continue improving interactivity, results calculation, and page access control:</p>
     <ol>
       <li>Allow users to select answers and submit quiz data (no backend — stored in-memory or in
@@ -280,6 +281,70 @@ export function listenLoginState(callback) {
       <li>Add a responsive <strong>footer</strong> and finalize styling tweaks</li>
     </ol>
   </div>
+
+  <!-- June 6 log -->
+  <div class="section" id="log6">
+    <h2>📅 June 6, 2025 — Phase 2 Continued: Answer Submission & Result Computation</h2>
+
+    <h3>✅ Accomplishments</h3>
+    <ul>
+      <li>Built an answer selection interface in <code>QuizQuestion.vue</code> that allows users to choose one answer
+        per question</li>
+      <li>Maintained user answers in component state and synchronized them with <code>localStorage</code> to ensure
+        persistence across sessions</li>
+      <li>Developed <code>Result.vue</code> to dynamically compute and present quiz results based on user input</li>
+      <li>Added route guards to <code>/quiz</code> and <code>/question</code> routes to restrict access and ensure
+        proper navigation flow</li>
+      <li>Started crafting a responsive footer component featuring essential links and social media icons, including a
+        privacy page link</li>
+      <li>Added an empty header component placeholder, preparing for future content</li>
+    </ul>
+
+    <h3>🧠 Key Learnings</h3>
+    <ul>
+      <li>Managing form-like state within Vue components for real-time answer selection</li>
+      <li>Leveraging <code>localStorage</code> to persist temporary data across page reloads and route changes</li>
+      <li>Implementing Vue Router navigation guards and programmatic redirects to protect user flow</li>
+      <li>Designing reusable and responsive layout components, demonstrated with the footer</li>
+    </ul>
+
+    <h3>🧪 Code Snippet — Pinia Store for Quiz Results</h3>
+    <pre><code>// stores/quiz.js
+import { defineStore } from 'pinia';
+
+export const useQuizStore = defineStore('quiz', {
+  state: () => ({
+    result: {
+      total: 0,
+      answer: 0,
+      score: 0,
+    },
+  }),
+  actions: {
+    setResult(total, answer, score) {
+      this.result = { total, answer, score };
+    },
+  },
+});
+</code></pre>
+
+
+    <h3>💡 Screenshots</h3>
+    <img src="img/6-juin---1.jpg" alt="UI for selecting answers" />
+    <img src="img/6-juin---2.jpg" alt="Calculated quiz results displayed" />
+    <img src="img/6-juin---3.jpg" alt="Preview of responsive footer" />
+
+    <h3>⏭️ Next Steps</h3>
+<p>Finalizing the project by focusing on:</p>
+<ol>
+  <li>Adding meaningful content to the privacy and about pages pages</li>
+  <li>Implementing strict access control and security for page navigation</li>
+  <li>Reviewing and polishing styles to ensure consistent and responsive design</li>
+</ol>
+
+  </div>
+
+
 
   <footer>
     <p>Maintained by Zakaria Tanan — <a href="mailto:tananzakaria630@gmail.com">tananzakaria630@gmail.com</a></p>
@@ -296,5 +361,5 @@ export function listenLoginState(callback) {
   }
 
   // Show June 2 log by default
-  window.onload = () => showLog('log5');
+  window.onload = () => showLog('log6');
 </script>
