@@ -21,6 +21,7 @@
     <button onclick="showLog('log4')">June 4</button>
     <button onclick="showLog('log5')">June 5</button>
     <button onclick="showLog('log6')">June 6</button>
+    <button onclick="showLog('log9')">June 9</button>
     <!-- Add more buttons as needed -->
   </div>
 
@@ -346,6 +347,54 @@ export const useQuizStore = defineStore('quiz', {
   </div>
 
 
+  <!-- June 9 log -->
+  <div class="section" id="log9">
+    <h2>📅 June 9, 2025 — Phase 4: Final Content Addition</h2>
+
+    <h3>✅ Accomplishments</h3>
+    <ul>
+      <li>Added detailed and styled content to <code>About.vue</code> including project overview, features, tech stack,
+        and credits</li>
+      <li>Enhanced <code>Privacy.vue</code> with a clear privacy policy explaining data collection, usage, security
+        measures, and user rights</li>
+      <li>Implemented responsive layouts with Tailwind CSS gradients, typography, tables, and lists for a polished look
+      </li>
+      <li>Included contact info and project ownership details to About page for clear attribution</li>
+      <li>Refactored <code>QuizQuestions.vue</code> to introduce randomized order of both questions and their options
+        using a shuffle function</li>
+      <li>Controlled access to pages by updating <code>router/index.js</code> with navigation guards and route metadata
+        to restrict access to <code>QuizStart</code> and <code>QuizQuestions</code> pages based on login status and
+        previous navigation history</li>
+    </ul>
+
+    <h3>🧠 Key Learnings</h3>
+    <ul>
+      <li>How to structure informative pages using Vue single file components</li>
+      <li>Effective use of Tailwind CSS for responsive design and consistent styling</li>
+      <li>Presenting technical details and privacy info in user-friendly formats (tables, lists)</li>
+      <li>How to apply array shuffling techniques to randomize quiz content and options for improved user experience
+      </li>
+      <li>How to implement navigation guards in Vue Router using <code>meta</code> fields, <code>beforeEach</code>
+        hooks, and route parameter validation for secure route access</li>
+    </ul>
+
+    <h3>💡 Screenshots</h3>
+    <img src="img/9-juin---1.jpg" alt="About page content with features and tech stack" />
+    <img src="img/9-juin---2.jpg" alt="Privacy policy page content and data security table" />
+    <img src="img/9-juin---3.jpg" alt="snip code of shuffle function" />
+    <img src="img/9-juin---4.jpg" alt="snip code of router/index.js to controll access to pages" />
+
+    <h3>⏭️ Next Steps</h3>
+    <p>Prepare for project wrap-up by:</p>
+    <ol>
+      Now that the Vue.js frontend is complete, I will begin learning Node.js to develop the backend. I plan to learn
+      Node.js concurrently, just as I did with Vue.js, allowing me to apply new concepts directly to this project. Once
+      I have mastered the basics, I will integrate the backend to handle server-side logic, data management, and improve
+      overall application functionality.
+    </ol>
+  </div>
+
+
 
   <footer>
     <p>Maintained by Zakaria Tanan — <a href="mailto:tananzakaria630@gmail.com">tananzakaria630@gmail.com</a></p>
@@ -362,5 +411,5 @@ export const useQuizStore = defineStore('quiz', {
   }
 
   // Show June 2 log by default
-  window.onload = () => showLog('log6');
+  window.onload = () => showLog('log9');
 </script>
