@@ -19,6 +19,7 @@ h3 {
 ul {
   margin-top: -15px;
 }
+
 li {
   margin-top: 10px;
 }
@@ -62,12 +63,12 @@ a {
   color: #3498db;
 }
 
-footer{
+footer {
   margin-top: 50px;
   text-align: center;
 }
 
-.tabs{
+.tabs {
   text-align: center;
   padding-bottom: 20px;
 }
@@ -81,6 +82,52 @@ footer{
   border-radius: 6px;
   cursor: pointer;
 }
+
 .tabs button:hover {
   background: #0056b3;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background: #333;
+  padding: 1rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.header button {
+  padding: 0.5rem 1rem;
+  background: #555;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.header button:hover {
+  background: #777;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+.entry {
+  margin-bottom: 2rem;
 }

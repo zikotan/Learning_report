@@ -4,412 +4,139 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zakaria's Vue Learning Report</title>
+  <title>NodeJS Progress</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <div class="header">
+    <button onclick="location.href='vuejs.html'">VueJs</button>
+    <button onclick="location.href='index.html'">NodeJs</button>
+  </div>
 
-  <h1>📘 Zakaria’s Vue Js Learning Report</h1>
-  <p style="text-align: center;">This report documents my learning journey with Vue.js, from syntax to building
-    real-world projects.</p>
-
+  <h1>📘 Zakaria’s Node Js Learning Report</h1>
+  <p style="text-align: center;">This report documents my Node.js learning journey from basic scripting to backend development principles.</p>
 
   <div class="tabs">
-    <button onclick="showLog('log2')">June 2</button>
-    <button onclick="showLog('log3')">June 3</button>
-    <button onclick="showLog('log4')">June 4</button>
-    <button onclick="showLog('log5')">June 5</button>
-    <button onclick="showLog('log6')">June 6</button>
-    <button onclick="showLog('log9')">June 9</button>
-    <!-- Add more buttons as needed -->
+    <button onclick="showLog('log10')">June 10</button>
+    <!-- Add more buttons for other dates if needed -->
   </div>
 
+  <!-- June 10 log -->
+<div class="section" id="log10">
+  <h2>📅 June 10, 2025 — Node.js Environment & Modules</h2>
 
-  <!-- June 2 log -->
-  <div class="section" id="log2">
-    <h2>📅 June 2, 2025 — Discovering Vue.js & First Component</h2>
+  <h3>✅ Accomplishments</h3>
+  <ul>
+    <li>Installed and configured Node.js environment (checked <code>node -v</code> and <code>npm -v</code>).</li>
+    <li>Created a working folder: <code>node-first-day</code> and opened it in VS Code.</li>
+    <li>Ran first script using <code>node hello.js</code> — printed "Hello from Node.js!".</li>
+    <li>Practiced understanding Node.js event loop with <code>setTimeout</code> example.</li>
+    <li>Created and used a CommonJS module using <code>require()</code> to import <code>math.js</code>.</li>
+    <li>Used the built-in <code>fs</code> module to create a file called <code>note.txt</code>.</li>
+    <li>Used the built-in <code>path</code> module to get the full absolute path of a file.</li>
+  </ul>
 
-    <h3>✅ Accomplishments</h3>
-    <ul>
-      <li>Read the official Vue.js introduction to understand the basics (reactivity, components, data binding, etc.)
-      </li>
-      <li>Installed the development environment with Vite + Vue 3</li>
-      <li>Created a first component in <code>App.vue</code> containing a dynamic message and a button</li>
-      <li>Implemented a function to reverse the displayed name using Vue reactivity</li>
-    </ul>
+  <h3>📂 Practice Folder Setup</h3>
+  <pre><code>
+mkdir node-first-day
+cd node-first-day
+code .
+  </code></pre>
 
-    <h3>💡 Component Screenshot</h3>
-    <img src="img/2-juin---1.jpg" alt="First Vue.js component - name reversal" />
+  <h3>📄 First Script</h3>
+  <p><strong>hello.js</strong></p>
+  <pre><code>
+console.log("Hello from Node.js!");
+  </code></pre>
 
-    <h3>📁 Deliverable</h3>
-    <ul>
-      <li>Designed a summary-style page explaining what I learned, with a button to generate a PDF using:</li>
-      <code>html2canvas</code> + <code>jsPDF</code>
-      <li>PDF includes a signature (name + image) dynamically generated without altering the page view</li>
-      <li><a href="https://drive.google.com/file/d/1YrAExmf2jyQ1qlj59YLB5HqllnoZIK6h/view?usp=sharing"
-          target="_blank">📎 View Generated PDF</a></li>
-    </ul>
+  <p>Run with:</p>
+  <pre><code>node hello.js</code></pre>
 
-    <h3>💡 Page Screenshot</h3>
-    <img src="img/2-juin---2.jpg" alt="PDF generation summary page" />
+  <h3>🔁 Event Loop Example</h3>
+  <p><strong>eventLoop.js</strong></p>
+  <pre><code>
+console.log("Start");
 
-    <h3>🧠 Key Learnings</h3>
-    <p>
-      Vue.js is very fluid to use. I found it interesting to see how data is automatically bound to the view (data
-      binding).
-      <br>For now, coding "by hand" feels more intuitive, but I expect this will change with practice and as I explore
-      more advanced features.
-    </p>
+setTimeout(() => {
+  console.log("Inside setTimeout");
+}, 2000);
 
-    <h3>💬 Email Sent to Mr. Rachid</h3>
-    <blockquote style="background:#f4f4f4;padding:10px;border-left:4px solid #ccc;">
-      Bonjour Mr. Rachid,<br><br>
-      Merci encore pour ton message de bienvenue 👋<br><br>
-      J’ai bien suivi les étapes proposées pour cette première journée et je te fais un retour rapide sur ce que j’ai
-      réalisé...
-      <br><br>
-      <em>Zakaria</em>
-    </blockquote>
-  </div>
+console.log("End");
+  </code></pre>
 
+  <p>Expected Output:</p>
+  <pre><code>
+Start
+End
+Inside setTimeout
+  </code></pre>
 
-
-  <!-- June 3 log -->
-  <div class="section" id="log3">
-    <h2>📅 June 3, 2025 — Phase 1: Page Setup in Vue</h2>
-
-    <h3>✅ Accomplishments</h3>
-    <ul>
-      <li>Created a new Vue project using Vite</li>
-      <li>Installed Vue Router</li>
-      <li>Created 4 basic pages: Home, Login, QuizStart, Result</li>
-      <li>Updated <code>App.vue</code> with router navigation</li>
-    </ul>
-
-    <h3>🧠 Key Learnings</h3>
-    <ul>
-      <li>How <code>&lt;router-view&gt;</code> renders active page components</li>
-      <li>How <code>&lt;router-link&gt;</code> is used instead of anchor tags</li>
-      <li>Each page is a separate <code>.vue</code> component</li>
-    </ul>
-
-    <h3>🧪 Code Sample from App.vue</h3>
-    <pre><code>&lt;template&gt;
-  &lt;div&gt;
-    &lt;nav&gt;
-      &lt;router-link to="/"&gt;Home&lt;/router-link&gt; |
-      &lt;router-link to="/login"&gt;Login&lt;/router-link&gt; |
-      &lt;router-link to="/quiz"&gt;Quiz&lt;/router-link&gt; |
-      &lt;router-link to="/result"&gt;Result&lt;/router-link&gt;
-    &lt;/nav&gt;
-    &lt;router-view /&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-</code></pre>
-
-    <h3>🧭 Code Sample from router/index.js</h3>
-    <pre><code>import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../pages/Home.vue';
-import About from '../pages/About.vue';
-import Login from '../pages/Login.vue';
-import QuizStart from '../pages/QuizStart.vue';
-import Result from '../pages/Result.vue';
-
-const routes = [
-  { path: '/', name: 'Home', component: Home },
-  { path: '/about', name: 'About', component: About },
-  { path: '/login', name: 'Login', component: Login },
-  { path: '/quiz', name: 'QuizStart', component: QuizStart },
-  { path: '/result', name: 'Result', component: Result }
-];
-
-const router = createRouter({
-  history: createWebHistory(),
-  routes
-});
-
-export default router;
-</code></pre>
-
-    <h3>💡 Screenshot</h3>
-    <img src="img/3-juin---1.jpg" alt="Navigation demo in Vue" />
-
-    <h3>⏭️ Next Steps</h3>
-    <p>Start building the content and functionality for each page:</p>
-    <ul>
-      <li><code>Login.vue</code> — create login form and handle authentication logic</li>
-      <li><code>Home.vue</code> — design the homepage layout</li>
-      <li><code>QuizStart.vue</code> — implement quiz start UI and logic</li>
-      <li><code>Result.vue</code> — display quiz results and feedback</li>
-    </ul>
-
-  </div>
-
-
-  <!-- June 4 log -->
-  <div class="section" id="log4">
-    <h2>📅 June 4, 2025 — Phase 2: Enhancing VueQuiz Battle with Login & Results</h2>
-
-    <h3>✅ Accomplishments</h3>
-    <ul>
-      <li>Developed a dynamic Home page displaying 8 quiz categories with sleek icons and Tailwind styling</li>
-      <li>Implemented Login page with email/password authentication against static JSON user data</li>
-      <li>Created Quiz Start page to introduce the challenge before beginning the quiz</li>
-      <li>Built Results page showing total questions, correct answers, and percentage score</li>
-      <li>Configured Vue Router for smooth navigation between pages</li>
-      <li>Added localStorage-based session handling for simple user state management</li>
-    </ul>
-
-    <p><em>Note: The current implementation is mainly structural—there is no real quiz data, user data, or quizzes yet.
-        Everything shown is a prototype or mockup of how things will look and work. The actual quiz content, real
-        authentication, and dynamic data will be added in upcoming development steps.</em></p>
-
-    <h3>🧠 Key Learnings</h3>
-    <ul>
-      <li>How to use Vue Router for multiple page navigation in a SPA</li>
-      <li>How to validate user input and authenticate against local data in Vue</li>
-      <li>Managing user session state with localStorage</li>
-      <li>Using Heroicons and Tailwind CSS for responsive, visually appealing UI components</li>
-    </ul>
-
-    <h3>🧪 Code Sample — Login Validation</h3>
-    <pre><code>import users from "@/src/data/users.json";
-
-export default {
-  data() {
-    return {
-      email: "",
-      password: "",
-    };
-  },
-  methods: {
-    handleLogin() {
-      const foundUser = users.find(
-        (user) =&gt;
-          user.email.toLowerCase() === this.email.trim().toLowerCase() &amp;&amp;
-          user.password === this.password
-      );
-
-      if (foundUser) {
-        localStorage.setItem("user", foundUser.email);
-        alert(`Welcome, ${foundUser.username}! You are now logged in.`);
-        this.email = "";
-        this.password = "";
-        this.$router.push("/quiz");
-      } else {
-        alert("Invalid email or password.");
-      }
-    },
-  },
-};
-</code></pre>
-
-    <h3>💡 Screenshots</h3>
-    <img src="img/4-juin---1.jpg" alt="Home page with quiz categories" />
-    <img src="img/4-juin---2.jpg" alt="Login page" />
-    <img src="img/4-juin---3.jpg" alt="Quiz start page" />
-    <img src="img/4-juin---4.jpg" alt="Results page" />
-
-    <h3>⏭️ Next Steps</h3>
-    <p>Plan to add backend authentication, dynamic quiz questions, and real-time scoring.</p>
-    <ol>
-      <li>Load quiz data from <code>quizzes.json</code></li>
-      <li>Show available quizzes by category</li>
-      <li>Display a quiz (questions, multiple choice answers)</li>
-      <li>Add a timer (<code>Timer.vue</code> component)</li>
-    </ol>
-  </div>
-
-  <!-- June 5 log -->
-  <div class="section" id="log5">
-    <h2>📅 June 5, 2025 — Phase 2: Dynamic Quizzes & Questions, Live Login State</h2>
-    <h3>✅ Accomplishments</h3>
-    <ul>
-      <li>Created <code>quizzes.json</code> with 3 quizzes per category and integrated it into
-        <code>QuizStart.vue</code> to show relevant quizzes dynamically based on selected category ID
-      </li>
-      <li>Added <code>questions.json</code> with 15 questions per quiz, displayed dynamically in a new
-        <code>QuizQuestion.vue</code> component
-      </li>
-      <li>Connected quiz selection to question loading by passing quiz ID through Vue Router</li>
-      <li>Implemented <strong>auth.js</strong> utility module to manage login state and logout functionality</li>
-      <li>Used <code>listenLoginState()</code> with window events to update login status live across all components
-        without refreshing the page</li>
-      <li>Conditionally showed or hid UI elements based on the login state stored in <code>localStorage</code></li>
-    </ul>
-    <h3>🧠 Key Learnings</h3>
-    <ul>
-      <li>How to use dynamic routing and route parameters to control quiz/question content</li>
-      <li>How to structure and consume local JSON files as mock databases</li>
-      <li>How to make Vue applications behave like true SPAs with reactive login/logout without page reloads</li>
-      <li>How to centralize shared logic (like auth) for clean reusable code across components</li>
-    </ul>
-    <h3>🧪 Code Sample — auth.js Logic</h3>
-    <pre><code>// src/utils/auth.js 
-export function isLoggedIn() { 
-  return !!localStorage.getItem("user"); 
-}
-export function logout(router) {
-  localStorage.removeItem("user");
-  router.push("/");
+  <h3>📦 CommonJS Module Example</h3>
+  <p><strong>math.js</strong></p>
+  <pre><code>
+function add(a, b) {
+  return a + b;
 }
 
-export function listenLoginState(callback) {
-  const update = () => callback(isLoggedIn());
-  window.addEventListener("storage", update);
-  window.addEventListener("user-logged-in", update);
-  return () => {
-    window.removeEventListener("storage", update);
-    window.removeEventListener("user-logged-in", update);
-  };
-}
-</code></pre>
+module.exports = add;
+  </code></pre>
 
-    <h3>💡 Screenshots</h3>
-    <img src="img/5-juin---1.jpg" alt="Quiz list per category" />
-    <img src="img/5-juin---2.jpg" alt="Questions loaded based on quiz ID" />
-    <img src="img/5-juin---3.jpg" alt="Conditional display depending on login state" />
-    <h3>⏭️ Next Steps</h3>
-    <p>Continue improving interactivity, results calculation, and page access control:</p>
-    <ol>
-      <li>Allow users to select answers and submit quiz data (no backend — stored in-memory or in
-        <code>localStorage</code>)
-      </li>
-      <li>Use submitted answers to calculate real-time results in <code>Result.vue</code></li>
-      <li>Protect routes like <code>/quiz</code> and <code>/question</code> — prevent access without category/quiz ID
-        and login</li>
-      <li>Add a responsive <strong>footer</strong> and finalize styling tweaks</li>
-    </ol>
-  </div>
+  <p><strong>main.js</strong></p>
+  <pre><code>
+const add = require('./math');
 
-  <!-- June 6 log -->
-  <div class="section" id="log6">
-    <h2>📅 June 6, 2025 — Phase 3: Answer Submission & Result Computation</h2>
+console.log("3 + 4 =", add(3, 4));
+  </code></pre>
 
-    <h3>✅ Accomplishments</h3>
-    <ul>
-      <li>Built an answer selection interface in <code>QuizQuestion.vue</code> that allows users to choose one answer
-        per question</li>
-      <li>Maintained user answers in component state and synchronized them with <code>localStorage</code> to ensure
-        persistence across sessions</li>
-      <li>Developed <code>Result.vue</code> to dynamically compute and present quiz results based on user input</li>
-      <li>Added route guards to <code>/quiz</code> and <code>/question</code> routes to restrict access and ensure
-        proper navigation flow</li>
-      <li>Started crafting a responsive footer component featuring essential links and social media icons, including a
-        privacy page link</li>
-      <li>Added an empty header component placeholder, preparing for future content</li>
-    </ul>
+  <p>Expected Output:</p>
+  <pre><code>3 + 4 = 7</code></pre>
 
-    <h3>🧠 Key Learnings</h3>
-    <ul>
-      <li>Managing form-like state within Vue components for real-time answer selection</li>
-      <li>Leveraging <code>localStorage</code> to persist temporary data across page reloads and route changes</li>
-      <li>Implementing Vue Router navigation guards and programmatic redirects to protect user flow</li>
-      <li>Designing reusable and responsive layout components, demonstrated with the footer</li>
-    </ul>
+  <h3>📂 File System Module (fs)</h3>
+  <p><strong>fileWrite.js</strong></p>
+  <pre><code>
+const fs = require('fs');
 
-    <h3>🧪 Code Snippet — Pinia Store for Quiz Results</h3>
-    <pre><code>// stores/quiz.js
-import { defineStore } from 'pinia';
+fs.writeFileSync('note.txt', 'Hello from Node.js fs module!');
+console.log('File created!');
+  </code></pre>
 
-export const useQuizStore = defineStore('quiz', {
-  state: () => ({
-    result: {
-      total: 0,
-      answer: 0,
-      score: 0,
-    },
-  }),
-  actions: {
-    setResult(total, answer, score) {
-      this.result = { total, answer, score };
-    },
-  },
-});
-</code></pre>
+  <p>This creates a file called <code>note.txt</code> in the same directory.</p>
 
+  <h3>🧭 Path Module Example</h3>
+  <p><strong>pathTest.js</strong></p>
+  <pre><code>
+const path = require('path');
 
-    <h3>💡 Screenshots</h3>
-    <img src="img/6-juin---1.jpg" alt="UI for selecting answers" />
-    <img src="img/6-juin---2.jpg" alt="UI for selecting answers" />
-    <img src="img/6-juin---3.jpg" alt="Calculated quiz results displayed" />
-    <img src="img/6-juin---4.jpg" alt="Preview of responsive footer" />
+const filePath = path.join(__dirname, 'note.txt');
+console.log("Full path:", filePath);
+  </code></pre>
 
-    <h3>⏭️ Next Steps</h3>
-    <p>Finalizing the project by focusing on:</p>
-    <ol>
-      <li>Adding meaningful content to the privacy and about pages pages</li>
-      <li>Implementing strict access control and security for page navigation</li>
-      <li>Reviewing and polishing styles to ensure consistent and responsive design</li>
-    </ol>
+  <p>Expected: Absolute path to <code>note.txt</code> printed in the console.</p>
 
-  </div>
+  <h3>🧠 Key Learnings</h3>
+  <p>
+    I now understand how Node.js runs JavaScript code outside the browser using its own runtime.
+    The event loop helped me realize how asynchronous operations are handled.
+    I also practiced modular code using CommonJS syntax and saw how built-in modules like <code>fs</code> and <code>path</code> can interact with the system directly.
+  </p>
 
-
-  <!-- June 9 log -->
-  <div class="section" id="log9">
-    <h2>📅 June 9, 2025 — Phase 4: Final Content Addition</h2>
-
-    <h3>✅ Accomplishments</h3>
-    <ul>
-      <li>Added detailed and styled content to <code>About.vue</code> including project overview, features, tech stack,
-        and credits</li>
-      <li>Enhanced <code>Privacy.vue</code> with a clear privacy policy explaining data collection, usage, security
-        measures, and user rights</li>
-      <li>Implemented responsive layouts with Tailwind CSS gradients, typography, tables, and lists for a polished look
-      </li>
-      <li>Included contact info and project ownership details to About page for clear attribution</li>
-      <li>Refactored <code>QuizQuestions.vue</code> to introduce randomized order of both questions and their options
-        using a shuffle function</li>
-      <li>Controlled access to pages by updating <code>router/index.js</code> with navigation guards and route metadata
-        to restrict access to <code>QuizStart</code> and <code>QuizQuestions</code> pages based on login status and
-        previous navigation history</li>
-    </ul>
-
-    <h3>🧠 Key Learnings</h3>
-    <ul>
-      <li>How to structure informative pages using Vue single file components</li>
-      <li>Effective use of Tailwind CSS for responsive design and consistent styling</li>
-      <li>Presenting technical details and privacy info in user-friendly formats (tables, lists)</li>
-      <li>How to apply array shuffling techniques to randomize quiz content and options for improved user experience
-      </li>
-      <li>How to implement navigation guards in Vue Router using <code>meta</code> fields, <code>beforeEach</code>
-        hooks, and route parameter validation for secure route access</li>
-    </ul>
-
-    <h3>💡 Screenshots</h3>
-    <img src="img/9-juin---1.jpg" alt="About page content with features and tech stack" />
-    <img src="img/9-juin---2.jpg" alt="Privacy policy page content and data security table" />
-    <img src="img/9-juin---3.jpg" alt="snip code of shuffle function" />
-    <img src="img/9-juin---4.jpg" alt="snip code of router/index.js to controll access to pages" />
-
-    <h3>⏭️ Next Steps</h3>
-    <p>Prepare for project wrap-up by:</p>
-    <ol>
-      Now that the Vue.js frontend is complete, I will begin learning Node.js to develop the backend. I plan to learn
-      Node.js concurrently, just as I did with Vue.js, allowing me to apply new concepts directly to this project. Once
-      I have mastered the basics, I will integrate the backend to handle server-side logic, data management, and improve
-      overall application functionality.
-    </ol>
-  </div>
-
+</div>
 
 
   <footer>
     <p>Maintained by Zakaria Tanan — <a href="mailto:tananzakaria630@gmail.com">tananzakaria630@gmail.com</a></p>
   </footer>
 
+  <script>
+    function showLog(id) {
+      document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+
+    // Show June 10 log by default
+    window.onload = () => showLog('log10');
+  </script>
 </body>
 
 </html>
-
-<script>
-  function showLog(id) {
-    document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
-    document.getElementById(id).style.display = 'block';
-  }
-
-  // Show June 2 log by default
-  window.onload = () => showLog('log9');
-</script>
