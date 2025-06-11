@@ -15,7 +15,8 @@
   </div>
 
   <h1>📘 Zakaria’s Node Js Learning Report</h1>
-  <p style="text-align: center;">This report documents my Node.js learning journey from basic scripting to backend development principles.</p>
+  <p style="text-align: center;">This report documents my Node.js learning journey from basic scripting to backend
+    development principles.</p>
 
   <div class="tabs">
     <button onclick="showLog('log10')">June 10</button>
@@ -23,105 +24,66 @@
   </div>
 
   <!-- June 10 log -->
-<div class="section" id="log10">
-  <h2>📅 June 10, 2025 — Node.js Environment & Modules</h2>
+  <div class="section" id="log10">
+    <h2>📅 June 10, 2025 — Node.js Environment & Modules</h2>
 
-  <h3>✅ Accomplishments</h3>
-  <ul>
-    <li>Installed and configured Node.js environment (checked <code>node -v</code> and <code>npm -v</code>).</li>
-    <li>Created a working folder: <code>node-first-day</code> and opened it in VS Code.</li>
-    <li>Ran first script using <code>node hello.js</code> — printed "Hello from Node.js!".</li>
-    <li>Practiced understanding Node.js event loop with <code>setTimeout</code> example.</li>
-    <li>Created and used a CommonJS module using <code>require()</code> to import <code>math.js</code>.</li>
-    <li>Used the built-in <code>fs</code> module to create a file called <code>note.txt</code>.</li>
-    <li>Used the built-in <code>path</code> module to get the full absolute path of a file.</li>
-  </ul>
+    <h3>✅ Accomplishments</h3>
+    <ul>
+      <li>Node.js was already installed on my machine because Vue CLI depends on it.<br>
+        I verified the installation using the terminal:<br>
+        <code>node -v</code> → <strong>v22.16.0</strong><br>
+        <code>npm -v</code> → <strong>10.9.2</strong><br>
+        Environment is ready for backend development.
+      </li>
+      <li>Created a working folder: <code>node-first-day</code> and opened it in VS Code.</li>
+      <li>Ran first script using <code>node hello.js</code> — printed "Hello from Node.js!".</li>
+      <li>Practiced understanding Node.js event loop with <code>setTimeout</code> example.</li>
+      <li>Created and used a CommonJS module using <code>require()</code> to import <code>math.js</code>.</li>
+      <li>Used the built-in <code>fs</code> module to create a file called <code>note.txt</code>.</li>
+      <li>Used the built-in <code>path</code> module to get the full absolute path of a file.</li>
+    </ul>
 
-  <h3>📂 Practice Folder Setup</h3>
-  <pre><code>
-mkdir node-first-day
+    <h3>📂 Practice Folder Setup</h3>
+    <pre><code>mkdir node-first-day
 cd node-first-day
 code .
-  </code></pre>
+</code></pre>
+    <ol style="padding-left: 25px;">
+      <h4>📄 First Script</h4>
+      <p>This shows the terminal output of my very first Node.js script, <code>hello.js</code>, which prints "Hello from
+        Node.js!" to confirm the runtime is working.</p>
+      <img src="img/10-juin---1.jpg" alt="hello.js terminal output" width="100%">
 
-  <h3>📄 First Script</h3>
-  <p><strong>hello.js</strong></p>
-  <pre><code>
-console.log("Hello from Node.js!");
-  </code></pre>
+      <h4>🔁 Event Loop Example</h4>
+      <p>This example demonstrates how the Node.js event loop works. The output proves that asynchronous code like
+        <code>setTimeout</code> is executed after synchronous code.
+      </p>
+      <img src="img/10-juin---2.jpg" alt="eventLoop.js terminal output" width="100%">
 
-  <p>Run with:</p>
-  <pre><code>node hello.js</code></pre>
+      <h4>📦 CommonJS Module Example</h4>
+      <p>I created a <code>math.js</code> file that exports basic operations. Then I imported it using
+        <code>require()</code> in another script. This shows how CommonJS modules work in Node.js.
+      </p>
+      <img src="img/10-juin---3.jpg" alt="CommonJS math.js + main.js terminal output" width="100%">
 
-  <h3>🔁 Event Loop Example</h3>
-  <p><strong>eventLoop.js</strong></p>
-  <pre><code>
-console.log("Start");
+      <h4>📂 File System Module (fs)</h4>
+      <p>I used the built-in <code>fs</code> module to write a file called <code>note.txt</code>. This output shows that
+        the file was successfully created with the desired content.</p>
+      <img src="img/10-juin---4.jpg" alt="fs module output - note.txt created" width="100%">
 
-setTimeout(() => {
-  console.log("Inside setTimeout");
-}, 2000);
-
-console.log("End");
-  </code></pre>
-
-  <p>Expected Output:</p>
-  <pre><code>
-Start
-End
-Inside setTimeout
-  </code></pre>
-
-  <h3>📦 CommonJS Module Example</h3>
-  <p><strong>math.js</strong></p>
-  <pre><code>
-function add(a, b) {
-  return a + b;
-}
-
-module.exports = add;
-  </code></pre>
-
-  <p><strong>main.js</strong></p>
-  <pre><code>
-const add = require('./math');
-
-console.log("3 + 4 =", add(3, 4));
-  </code></pre>
-
-  <p>Expected Output:</p>
-  <pre><code>3 + 4 = 7</code></pre>
-
-  <h3>📂 File System Module (fs)</h3>
-  <p><strong>fileWrite.js</strong></p>
-  <pre><code>
-const fs = require('fs');
-
-fs.writeFileSync('note.txt', 'Hello from Node.js fs module!');
-console.log('File created!');
-  </code></pre>
-
-  <p>This creates a file called <code>note.txt</code> in the same directory.</p>
-
-  <h3>🧭 Path Module Example</h3>
-  <p><strong>pathTest.js</strong></p>
-  <pre><code>
-const path = require('path');
-
-const filePath = path.join(__dirname, 'note.txt');
-console.log("Full path:", filePath);
-  </code></pre>
-
-  <p>Expected: Absolute path to <code>note.txt</code> printed in the console.</p>
-
-  <h3>🧠 Key Learnings</h3>
-  <p>
-    I now understand how Node.js runs JavaScript code outside the browser using its own runtime.
-    The event loop helped me realize how asynchronous operations are handled.
-    I also practiced modular code using CommonJS syntax and saw how built-in modules like <code>fs</code> and <code>path</code> can interact with the system directly.
-  </p>
-
-</div>
+      <h4>🧭 Path Module Example</h4>
+      <p>This image shows the use of the <code>path</code> module to construct and display the absolute path of a file,
+        helping with dynamic file handling in Node.js.</p>
+      <img src="img/10-juin---5.jpg" alt="Path module output - absolute path" width="100%">
+    </ol>
+    <h3>🧠 Key Learnings</h3>
+    <p>
+      I now understand how Node.js runs JavaScript code outside the browser using its own runtime.
+      The event loop helped me realize how asynchronous operations are handled.
+      I also practiced modular code using CommonJS syntax and saw how built-in modules like <code>fs</code> and
+      <code>path</code> can interact with the system directly.
+    </p>
+  </div>
 
 
   <footer>
