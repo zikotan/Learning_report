@@ -20,6 +20,7 @@
 
   <div class="tabs">
     <button onclick="showLog('log10')">June 10</button>
+    <button onclick="showLog('log11')">June 11</button>
     <!-- Add more buttons for other dates if needed -->
   </div>
 
@@ -85,6 +86,84 @@ code .
     </p>
   </div>
 
+  <!-- June 11 log -->
+  <div class="section" id="log11" style="display: none;">
+    <h2>📅 June 11, 2025 — HTTP Server and Routing (Node.js Core)</h2>
+
+    <h3>✅ Accomplishments</h3>
+    <ul>
+      <li>Created a basic HTTP server using Node’s built-in <code>http</code> module.</li>
+      <li>Served a static HTML file (<code>index.html</code>) from a <code>public</code> folder using <code>fs</code>.
+      </li>
+      <li>Handled basic routing for <code>/</code>, <code>/home</code>, and <code>/api</code> endpoints.</li>
+      <li>Sent a JSON response with user data at <code>/api</code> route using
+        <code>res.end(JSON.stringify(...))</code>.
+      </li>
+      <li>Tested 404 responses when an unknown route is visited.</li>
+      <li>Organized the project folder: separated HTML, logic, and made it easy to scale later with Fastify.</li>
+    </ul>
+
+    <h3>📂 Practice Folder Setup</h3>
+    <pre><code>mkdir node-second-day
+ cd node-second-day
+ code .
+
+ mkdir public, routes, controllers
+ touch server.js, routes/mainRoutes.js, controllers/mainController.js, public/index.html
+    
+    <span style="color: blue;">D:&lt;node-second-day&gt;</span>
+    │   server.js
+    │
+    ├───<span style="color: blue;">controllers</span>
+    │       mainController.js
+    │
+    ├───<span style="color: blue;">public</span>
+    │       index.html
+    │
+    └───<span style="color: blue;">routes</span>
+            mainRoutes.js
+
+</code></pre>
+
+    <ol style="padding-left: 25px;">
+      <li>
+        <h4>🌐 HTTP Server Terminal</h4>
+        <p>Terminal showing server running on <code>localhost:3000</code> using <code>http.createServer()</code>.</p>
+        <img src="img/11-juin---1.jpg" alt="HTTP server terminal output" width="100%">
+      </li>
+      <li>
+        <h4>📄 index.html Served</h4>
+        <p>Node.js served this simple HTML file using the <code>fs</code> module.</p>
+        <img src="img/11-juin---2.jpg" alt="Index page from public folder served" width="100%">
+      </li>
+      <li>
+        <h4>📦 JSON Response at /api</h4>
+        <p>This shows the browser displaying the JSON response from <code>/api</code>.</p>
+        <img src="img/11-juin---3.jpg" alt="JSON API response in browser" width="100%">
+      </li>
+      <li>
+        <h4>❌ 404 Route Handling</h4>
+        <p>Visiting an unknown route returns a custom plain text 404 response.</p>
+        <img src="img/11-juin---4.jpg" alt="404 error output in browser" width="100%">
+      </li>
+    </ol>
+
+    <h3>🧠 Key Learnings</h3>
+    <p>
+      I now understand how Node.js can create a server from scratch using the <code>http</code> module.
+      I practiced routing logic and learned how to serve both HTML content and JSON responses.
+      This is the foundation for building REST APIs and serving data to the Vue frontend.
+    </p>
+
+    <h3>🔜 What’s Next (Day 3 Preview)</h3>
+    <p>
+      Tomorrow we will upgrade to <strong>Fastify</strong> to simplify server code, handle middleware, and support
+      POST requests,
+      preparing for user login and registration features.
+    </p>
+  </div>
+
+
 
   <footer>
     <p>Maintained by Zakaria Tanan — <a href="mailto:tananzakaria630@gmail.com">tananzakaria630@gmail.com</a></p>
@@ -97,7 +176,7 @@ code .
     }
 
     // Show June 10 log by default
-    window.onload = () => showLog('log10');
+    window.onload = () => showLog('log11');
   </script>
 </body>
 
