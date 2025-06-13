@@ -21,6 +21,7 @@
   <div class="tabs">
     <button onclick="showLog('log10')">June 10</button>
     <button onclick="showLog('log11')">June 11</button>
+    <button onclick="showLog('log12')">June 12</button>
     <!-- Add more buttons for other dates if needed -->
   </div>
 
@@ -164,20 +165,191 @@ code .
   </div>
 
 
+  <!-- June 12 log -->
+  <div class="section" id="log12" style="display: none;">
+    <h2>📅 June 12, 2025 — Fastify Setup, Routes, and POST Handling</h2>
 
-  <footer>
-    <p>Maintained by Zakaria Tanan — <a href="mailto:tananzakaria630@gmail.com">tananzakaria630@gmail.com</a></p>
-  </footer>
+    <h3>✅ Accomplishments</h3>
+    <ul>
+      <li>Installed Fastify using <code>npm install fastify</code>.</li>
+      <li>Created a Fastify server in <code>server.js</code> with a basic route <code>/</code> that returns a welcome
+        message.</li>
+      <li>Added a new route <code>/about</code> that returns a JSON object.</li>
+      <li>Handled a <code>POST</code> request at <code>/login</code> route with Fastify body parsing enabled.</li>
+      <li>Tested API endpoints using browser for GET and PowerShell Invoke-RestMethod for POST requests.</li>
+      <li>Restructured project folders for clarity (added <code>routes</code> and <code>controllers</code> directories).
+      </li>
+    </ul>
 
-  <script>
-    function showLog(id) {
-      document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
-    }
+    <h3>📂 Practice Folder Setup</h3>
+    <pre><code>mkdir node-third-day
+ cd node-third-day
+ npm init -y
+ npm install fastify
 
-    // Show June 10 log by default
-    window.onload = () => showLog('log11');
-  </script>
+ mkdir routes controllers
+ touch server.js routes/mainRoutes.js controllers/mainController.js
+
+ <span style="color: blue;">D:&lt;node-third-day&gt;</span>
+    │   server.js
+    │
+    ├───<span style="color: blue;">controllers</span>
+    │       mainController.js
+    │
+    └───<span style="color: blue;">routes</span>
+            mainRoutes.js
+</code></pre>
+
+    <ol style="padding-left: 25px;">
+      <li>
+        <h4>⚙️ Fastify Server Running</h4>
+        <p>The terminal shows the Fastify server running on <code>http://localhost:3000</code>.</p>
+        <pre><code>const fastify = require('fastify')({
+   logger: {
+     transport: {
+       target: 'pino-pretty',
+       options: { translateTime: 'SYS:standard', ignore: 'pid,hostname' }
+     }
+   }
+ });
+ const mainRoutes = require('./routes/mainRoutes');
+ fastify.register(mainRoutes);
+ fastify.listen({ port: 3000 }, (err, address) => {
+   if (err) { fastify.log.error(err); process.exit(1); }
+   console.log(`\n🚀 Server is running on ${address}\n`);
+ });
+</code></pre>
+        <img src="img/12-juin---1.jpg" alt="Fastify server running output" width="100%">
+      </li>
+      <li>
+        <h4>📄 Basic GET Route</h4>
+        <p>This screenshot shows the <code>/</code> route returning a welcome message using Fastify.</p>
+        <pre><code>exports.home = async (request, reply) => {
+   reply.send({ message: 'Welcome to Zakaria\'s Fastify server!' });
+ };
+</code></pre>
+        <img src="img/12-juin---2.jpg" alt="GET / route response" width="100%">
+      </li>
+      <li>
+        <h4>🧾 JSON Response from /about</h4>
+        <p>The <code>/about</code> route returns a JSON object as expected.</p>
+        <pre><code>exports.about = async (request, reply) => {
+   reply.send({
+     name: 'Zakaria Tanan',
+     learning: 'Node.js & Fastify',
+     date: 'June 12, 2025'
+   });
+ };
+</code></pre>
+        <img src="img/12-juin---3.jpg" alt="GET /about route JSON response" width="100%">
+      </li>
+      <li>
+        <h4>📥 GET/POST Request</h4>
+        <p>Tested the <code>/login</code> route with user credentials.</p>
+        <img src="img/12-juin---4.jpg" alt="POST /login with JSON body in Postman" width="100%">
+        <pre><code>exports.login = async (request, reply) => {
+   const { username, password } = request.body;
+   if (username === 'zakaria' && password === 'secret') {
+     reply.send({ status: 'success', message: 'Login successful!' });
+   } else {
+     reply.code(401).send({ status: 'fail', message: 'Invalid credentials' });
+   }
+ };
+</code></pre>
+        <img src="img/12-juin---5.jpg" alt="POST /login with JSON body in Postman" width="100%">
+        <img src="img/12-juin---6.jpg" alt="POST /login with JSON body in Postman" width="100%">
+      </li>
+    </ol>
+
+    <h3>🧠 Key Learnings</h3>
+    <p>
+      Today I learned how to use Fastify as a modern alternative to the native <code>http</code> module. It provides an
+      easier syntax, built-in body parsing, and cleaner routing. Fastify helped me structure my server code better and
+      prepare for more advanced backend features like middleware and authentication.
+    </p>
+
+    <h3>🔜 What’s Next (Day 4 Preview)</h3>
+    <p>
+      Tomorrow, I will begin transforming my <strong>Vue-only quiz app</strong> — which I built fully on the frontend
+      using just Vue.js — into a <strong>secure, professional full-stack web app</strong> by:
+    </p>
+    <ul>
+      <li><strong>Vue = Frontend Only</strong><br>
+        I already built all quiz pages, logic, and design using Vue, including:
+        <ul>
+          <li>User interface</li>
+          <li>Quiz questions and answers</li>
+          <li>Navigation between components</li>
+          <li>Score calculations</li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul>
+  <li><strong>Fastify + Node.js = Backend</strong><br>
+      Now I’ll start adding a real backend using Fastify to handle:
+    <ul>
+      <li><strong>Authentication (Login/Register)</strong><br>
+          - Accept user inputs<br>
+          - Hash passwords using <code>bcrypt</code><br>
+          - Issue JWT tokens on login<br>
+          - Store and validate sessions securely
+      </li>
+      <li><strong>Routing & APIs</strong><br>
+          - Dynamic routes like <code>/api/quiz/:id</code><br>
+          - <code>POST /api/submit/:quizId</code> for answers<br>
+          - Use <code>fastify-cors</code>, <code>fastify-formbody</code>, <code>fastify-jwt</code>, etc.
+      </li>
+      <li><strong>Database Setup (SQLite)</strong><br>
+          - <code>users</code> table for auth<br>
+          - <code>quizzes</code>, <code>questions</code>, <code>answers</code>, <code>scores</code> tables<br>
+          - SQLite for lightweight, easy-to-manage dev database
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+    <!-- <ul>
+  <li><strong>Vue ↔️ Fastify Integration</strong><br>
+      Replace mock frontend data with real API calls:
+    <ul>
+      <li>Use <code>axios</code> in Vue to call backend routes</li>
+      <li>Store JWT tokens in localStorage</li>
+      <li>Use Vue to show real quiz data and secure user scores</li>
+    </ul>
+  </li>
+</ul> -->
+
+
+    <!-- <ul>
+  <li><strong>Final Goal</strong><br>
+      Turn the static Vue quiz project into a <strong>professional full-stack app</strong> where:
+    <ul>
+      <li>Backend handles all security, storage, and APIs</li>
+      <li>Frontend stays clean and focused on UX/UI</li>
+      <li>Authentication is secure</li>
+      <li>Data is persistent</li>
+      <li>Architecture is scalable</li>
+    </ul>
+  </li>
+</ul>
+  </div> -->
+
+
+    <footer>
+      <p>Maintained by Zakaria Tanan — <a href="mailto:tananzakaria630@gmail.com">tananzakaria630@gmail.com</a></p>
+    </footer>
+
+    <script>
+      function showLog(id) {
+        document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+      }
+
+      // Show June 10 log by default
+      window.onload = () => showLog('log12');
+    </script>
 </body>
 
 </html>
