@@ -23,6 +23,7 @@
     <button onclick="showLog('log11')">June 11</button>
     <button onclick="showLog('log12')">June 12</button>
     <button onclick="showLog('log13')">June 13</button>
+    <button onclick="showLog('log16')">June 16</button>
     <!-- Add more buttons for other dates if needed -->
   </div>
 
@@ -313,220 +314,6 @@ code .
 
 
   <!-- June 13 log -->
-  <!-- <div class="section" id="log13" style="display: none;">
-  <h2>📅 June 13, 2025 — Fastify Plugins, JWT Auth, and Frontend-Backend Integration</h2>
-
-  <h3>✅ Accomplishments</h3>
-  <ul>
-    <li>Integrated important Fastify plugins:
-      <ul>
-        <li><code>@fastify/cors</code> — enabled CORS support</li>
-        <li><code>@fastify/formbody</code> — allowed parsing of form-encoded bodies</li>
-        <li><code>@fastify/jwt</code> — used for handling JSON Web Tokens</li>
-      </ul>
-    </li>
-    <li>Set up authentication logic in Fastify backend:
-      <ul>
-        <li>Created POST routes for <code>/register</code> and <code>/login</code></li>
-        <li>Used <code>bcrypt</code> to hash and compare passwords securely</li>
-        <li>Issued JWT tokens on successful login</li>
-        <li>Protected routes using <code>fastify-jwt</code>'s verify method</li>
-      </ul>
-    </li>
-    <li>Tested JWT token generation and validation with protected routes</li>
-    <li>Restructured and modularized backend server using separate route files</li>
-    <li>Set up <code>nodemon</code> to auto-restart backend server during development</li>
-    <li>Created combined dev script using <code>concurrently</code> to run frontend and backend at once</li>
-    <li>Tested end-to-end communication between Vue frontend and Fastify backend using fetch calls</li>
-    <li>Handled frontend login form submission and successfully received JWT from backend</li>
-  </ul>
-
-  <h3>📂 Project Structure Progress</h3>
-  <pre><code>📁 vue-fastify-quiz
-├── 📁 client
-│   └── Vue 3 Quiz Frontend (Vite, Pinia, Vue Router)
-├── 📁 server
-│   ├── server.js
-│   ├── 📁 routes
-│   │   ├── auth.js
-│   └── 📁 controllers
-│       └── authController.js
-├── package.json (root)
-</code></pre>
-
-  <h3>🧠 Key Learnings</h3>
-  <p>
-    Today I successfully connected the Vue frontend to the Fastify backend. I implemented user authentication using JWT
-    and bcrypt, and modularized my server logic to prepare for future routes. I also learned how to secure routes, manage
-    sessions with tokens, and create a full development workflow using <code>concurrently</code>.
-  </p>
-
-  <h3>🔜 What’s Next (Day 5 Preview)</h3>
-  <p>
-    Tomorrow, I will begin integrating the <strong>SQLite database</strong> into the backend to persist real data. This includes:
-  </p>
-  <ul>
-    <li>Installing and configuring SQLite (maybe with <code>better-sqlite3</code> or <code>sqlite3</code>)</li>
-    <li>Creating database tables:
-      <ul>
-        <li><code>users</code> — to store hashed credentials</li>
-        <li><code>quizzes</code>, <code>questions</code>, <code>answers</code>, <code>scores</code></li>
-      </ul>
-    </li>
-    <li>Connecting routes to read/write from the database</li>
-    <li>Refactoring login and register to persist users in SQLite</li>
-    <li>Fetching quiz data dynamically from the DB</li>
-  </ul>
-</div> -->
-
-
-  <!-- June 13 log -->
-  <!-- <div class="section" id="log13" style="display: none;">
-  <h2>📅 June 13, 2025 — Fastify Auth Backend & Vue Frontend Integration</h2>
-
-  <h3>✅ Accomplishments</h3>
-  <ul>
-    <li>Moved the <code>data/</code> folder (users.json, questions.json, quizzes.json) from <code>src/</code> to <code>server/</code></li>
-    <li>Created a Fastify backend from scratch with the following features:
-      <ul>
-        <li><code>@fastify/cors</code> — enabled CORS for frontend communication</li>
-        <li><code>@fastify/formbody</code> — handled form submissions</li>
-        <li><code>@fastify/jwt</code> — used to sign and verify login tokens</li>
-        <li><code>bcrypt</code> — securely hashed passwords during registration</li>
-        <li>Read and wrote user data to <code>server/data/users.json</code></li>
-      </ul>
-    </li>
-    <li>Implemented <code>/api/register</code> and <code>/api/login</code> routes:
-      <ul>
-        <li>Registration endpoint hashes and saves new users</li>
-        <li>Login endpoint verifies credentials and issues JWT token</li>
-      </ul>
-    </li>
-    <li>Built a Vue 3 registration page with animated form and fetch request to the backend</li>
-    <li>Updated the login page to:
-      <ul>
-        <li>Send POST request to backend with credentials</li>
-        <li>Store JWT token and email in <code>localStorage</code></li>
-        <li>Dispatch a custom event <code>user-logged-in</code> to update the app</li>
-      </ul>
-    </li>
-    <li>Tested full frontend-backend registration and login flow</li>
-  </ul>
-
-  <h3>📂 Project Structure Progress</h3>
-  <pre><code>📁 vue-fastify-quiz
-├── 📁 client
-│   └── Vue 3 Quiz Frontend (Vite)
-├── 📁 server
-│   ├── server.js
-│   └── 📁 data
-│       ├── users.json
-│       ├── questions.json
-│       └── quizzes.json
-</code></pre>
-
-  <h3>🧠 Key Learnings</h3>
-  <p>
-    I learned how to handle form submissions securely using Fastify, hash and store passwords with bcrypt, and issue tokens using JWT. 
-    I also practiced connecting a Vue 3 frontend to a Fastify backend using fetch, and managing login sessions via localStorage.
-  </p>
-
-  <h3>🔜 What’s Next (Day 5 Preview)</h3>
-  <p>
-    Tomorrow, I plan to:
-  </p>
-  <ul>
-    <li>Add token-based protection for future quiz routes</li>
-    <li>Clean up fetch error handling and frontend UX</li>
-    <li>Begin planning for database migration (SQLite or MongoDB)</li>
-    <li>Optional: Add a logout mechanism and token validation middleware</li>
-  </ul>
-</div> -->
-
-
-  <!-- June 13 log -->
-  <!-- <div class="section" id="log13" style="display: none;">
-    <h2>📅 June 13, 2025 — Fastify Plugins, JWT Auth, and Frontend-Backend Integration</h2>
-
-    <h3>✅ Accomplishments</h3>
-    <ul>
-      <li>Integrated important Fastify plugins:
-        <ul>
-          <li><code>@fastify/cors</code> — enabled CORS support</li>
-          <li><code>@fastify/formbody</code> — allowed parsing of form-encoded bodies</li>
-          <li><code>@fastify/jwt</code> — used for handling JSON Web Tokens</li>
-        </ul>
-      </li>
-      <li>Set up authentication logic in Fastify backend:
-        <ul>
-          <li>Created POST routes for <code>/register</code> and <code>/login</code></li>
-          <li>Used <code>bcrypt</code> to hash and compare passwords securely</li>
-          <li>Issued JWT tokens on successful login</li>
-          <li>Protected routes using <code>fastify-jwt</code>'s verify method</li>
-        </ul>
-      </li>
-      <li>Added backend routes to serve:
-        <ul>
-          <li><code>/api/quizzes/:categoryId</code> — quizzes per category</li>
-          <li><code>/api/questions/:quizId</code> — questions per quiz</li>
-          <li><code>/api/quizzes</code> — all quizzes</li>
-        </ul>
-      </li>
-      <li>Used JSON files (<code>users.json</code>, <code>quizzes.json</code>, <code>questions.json</code>) as
-        lightweight backend DB</li>
-      <li>Handled reading/writing user data and serving quiz/question data via the backend</li>
-      <li>Updated <code>QuizStart</code> component to fetch quizzes from backend instead of local file</li>
-      <li>Refactored <code>QuizQuestions</code> to:
-        <ul>
-          <li>Fetch questions dynamically using <code>/api/questions/:quizId</code></li>
-          <li>Fetch all quizzes to display the quiz title</li>
-          <li>Handle loading/error states</li>
-        </ul>
-      </li>
-      <li>Tested full flow: Register → Login → Fetch quizzes → Take quiz → See results</li>
-    </ul>
-
-    <h3>📂 Project Structure Progress</h3>
-    <pre><code>📁 vue-fastify-quiz
-├── 📁 client
-│   └── Vue 3 Quiz Frontend (Vite, Pinia, Vue Router)
-├── 📁 server
-│   ├── server.js
-│   ├── 📁 data
-│   │   ├── users.json
-│   │   ├── quizzes.json
-│   │   └── questions.json
-├── package.json (root)
-</code></pre>
-
-    <h3>🧠 Key Learnings</h3>
-    <p>
-      Today I implemented dynamic quiz and question fetching using Fastify and JSON data files. I learned how to
-      structure API endpoints that return filtered data, how to replace hardcoded frontend logic with real API calls,
-      and how to manage quiz flow with dynamic Vue routing and state. This brought the project much closer to a
-      real-world architecture.
-    </p>
-
-    <h3>🔜 What’s Next (Day 5 Preview)</h3>
-    <p>
-      Tomorrow, I will begin integrating the <strong>SQLite database</strong> into the backend to persist real data.
-      This includes:
-    </p>
-    <ul>
-      <li>Installing and configuring SQLite (maybe with <code>better-sqlite3</code> or <code>sqlite3</code>)</li>
-      <li>Creating database tables:
-        <ul>
-          <li><code>users</code> — to store hashed credentials</li>
-          <li><code>quizzes</code>, <code>questions</code>, <code>answers</code>, <code>scores</code></li>
-        </ul>
-      </li>
-      <li>Connecting routes to read/write from the database</li>
-      <li>Refactoring login and register to persist users in SQLite</li>
-      <li>Fetching quiz data dynamically from the DB</li>
-    </ul>
-  </div> -->
-
-  <!-- June 13 log -->
   <div class="section" id="log13" style="display: none;">
     <h2>📅 June 13, 2025 — Fastify Auth Backend & Vue Frontend Integration</h2>
 
@@ -684,14 +471,12 @@ code .
 
     <h3>🔜 What’s Next (Day 5 Preview)</h3>
     <p>
-      Since I’ve been using <code>.json</code> files for all my data so far, tomorrow I plan to begin the transition to
+      Since I’ve been using <code>.json</code> files for all my data so far, next time I plan to begin the transition to
       a proper database setup with SQLite. Here’s what’s next:
     </p>
     <ul>
-      <li>🔐 Add token-based protection to quiz-related routes (e.g., using middleware)</li>
-      <li>🛠️ Improve frontend UX and handle fetch errors more gracefully</li>
+      <li>⚙️ Install and configure <code>better-sqlite3</code> package</li>
       <li>🗃️ Set up SQLite for persistent data storage</li>
-      <li>⚙️ Install and configure <code>sqlite3</code> or <code>better-sqlite3</code> package</li>
       <li>📁 Create database schema with the following tables:
         <ul>
           <li><code>users</code> — for storing emails and hashed passwords</li>
@@ -699,52 +484,230 @@ code .
         </ul>
       </li>
       <li>🔄 Refactor <code>/register</code> and <code>/login</code> to use SQLite instead of JSON</li>
+      <li>🔐 Add token-based protection to quiz-related routes (e.g., using middleware)</li>
+      <li>🛠️ Improve frontend UX and handle fetch errors more gracefully</li>
       <li>📡 Dynamically fetch quizzes and questions from the database</li>
     </ul>
+  </div>
 
+  <!-- June 16 log -->
+  <div class="section" id="log16" style="display: none;">
+    <h2>📅 June 16, 2025 — Switched from JSON to SQLite</h2>
 
-
-
-    <!-- <ul>
-  <li><strong>Vue ↔️ Fastify Integration</strong><br>
-      Replace mock frontend data with real API calls:
+    <h3>✅ Accomplishments</h3>
     <ul>
-      <li>Use <code>axios</code> in Vue to call backend routes</li>
-      <li>Store JWT tokens in localStorage</li>
-      <li>Use Vue to show real quiz data and secure user scores</li>
+      <li>Installed and configured <code>better-sqlite3</code> for synchronous DB access in Fastify</li>
+      <li>Created and used <code>db.js</code> to initialize and manage the <code>data.db</code> SQLite database</li>
+      <li>Replaced all <code>users.json</code> logic with SQL-based logic for <strong>register</strong> and
+        <strong>login</strong>
+      </li>
+      <li>Used <strong>SQLite3 Editor</strong> extension to visually inspect, edit, and delete user records from the
+        SQLite database</li>
+      <li>Tested full user authentication flow using the new SQLite setup</li>
+      <li>Migrated quiz data from JSON files to SQLite database tables (<code>quizzes</code> table)</li>
+      <li>Refactored all quiz-related API endpoints to fetch quizzes by category or all quizzes directly from SQLite
+      </li>
+      <li>Imported <code>questions.json</code> into a new SQLite <code>questions</code> table using a dedicated import
+        script</li>
+      <li>Refactored question API endpoints to load from SQLite instead of JSON files</li>
     </ul>
-  </li>
-</ul> -->
 
+    <h3>📂 Code Refactor Highlights</h3>
+    <ol style="padding-left: 25px;">
+      <li>
+        <h4>🗃️ SQLite DB Setup (<code>db.js</code>)</h4>
+        <p>Created a dedicated database setup file to initialize a <code>users</code> and <code>quizzes</code> table on
+          app start.</p>
+        <pre><code>import path from 'path';
+ import Database from 'better-sqlite3';
+ import { fileURLToPath } from 'url';
+ const __dirname = path.dirname(fileURLToPath(import.meta.url));
+ const dbPath = path.resolve(__dirname, 'data.db'); // safe full path
+ const db = new Database(dbPath);
 
-    <!-- <ul>
-  <li><strong>Final Goal</strong><br>
-      Turn the static Vue quiz project into a <strong>professional full-stack app</strong> where:
-    <ul>
-      <li>Backend handles all security, storage, and APIs</li>
-      <li>Frontend stays clean and focused on UX/UI</li>
-      <li>Authentication is secure</li>
-      <li>Data is persistent</li>
-      <li>Architecture is scalable</li>
-    </ul>
-  </li>
-</ul> -->
+ db.prepare(\`
+   CREATE TABLE IF NOT EXISTS users (
+     id INTEGER PRIMARY KEY AUTOINCREMENT,
+     email TEXT UNIQUE NOT NULL,
+     password TEXT NOT NULL
+   )
+ \`).run();
+</code></pre>
 
+        <p style="margin-top: 15px;">Same for <code>quizzes</code></p>
+        <pre><code>db.prepare(\`
+   CREATE TABLE IF NOT EXISTS quizzes (
+     id INTEGER PRIMARY KEY,
+     title TEXT NOT NULL,
+     category_id INTEGER NOT NULL,
+     question_count INTEGER NOT NULL
+   )
+ \`).run();
+</code></pre>
 
+        <p style="margin-top: 15px;">And for <code>questions</code></p>
+        <pre><code>db.prepare(\`
+   CREATE TABLE IF NOT EXISTS questions (
+     id INTEGER PRIMARY KEY AUTOINCREMENT,
+     quiz_id INTEGER NOT NULL,
+     question TEXT NOT NULL,
+     options TEXT NOT NULL,
+     answer TEXT NOT NULL,
+     FOREIGN KEY (quiz_id) REFERENCES quizzes(id)
+   )
+ \`).run();
+ 
+ export default db;
+</code></pre>
+      </li>
 
-    <footer>
-      <p>Maintained by Zakaria Tanan — <a href="mailto:tananzakaria630@gmail.com">tananzakaria630@gmail.com</a></p>
-    </footer>
+      <li>
+        <h4>🔐 Updated Register Route</h4>
+        <p>Checks for existing user by email, hashes password, and stores the user securely.</p>
+        <pre><code>fastify.post('/api/register', async (req, reply) => {
+    const { email, password } = req.body
+    if (!email || !password) {
+      return reply.code(400).send({ error: 'Email and password required' })
+    }
+    const existing = db.prepare('SELECT * FROM users WHERE email = ?').get(email)
+    if (existing) {
+      return reply.code(400).send({ error: 'Email already registered' })
+    }
+    const hashed = await bcrypt.hash(password, 10)
+    db.prepare('INSERT INTO users (email, password) VALUES (?, ?)').run(email, hashed)
+    return reply.send({ success: true })
+ })</code></pre>
+      </li>
 
-    <script>
-      function showLog(id) {
-        document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
-        document.getElementById(id).style.display = 'block';
+      <li>
+        <h4>🔐 Updated Login Route</h4>
+        <p>Validates credentials using the new database and returns a JWT token.</p>
+        <pre><code>fastify.post('/api/login', async (req, reply) => {
+    const { email, password } = req.body
+    if (!email || !password) {
+      return reply.code(400).send({ error: 'Email and password required' })
+    }
+    try {
+      const user = db.prepare('SELECT * FROM users WHERE email = ?').get(email)
+      if (!user || !(await bcrypt.compare(password, user.password))) {
+        return reply.code(401).send({ error: 'Invalid credentials' })
       }
+      const token = fastify.jwt.sign({ email: user.email })
+      return reply.send({ token })
+    } catch (err) {
+      console.error('Login error:', err)
+      return reply.code(500).send({ error: 'Internal server error' })
+    }
+ })</code></pre>
+      </li>
 
-      // Show June 10 log by default
-      window.onload = () => showLog('log13');
-    </script>
+      <li>
+        <h4>🧪 DB Editing Tool</h4>
+        <p>Used <strong>SQLite3 Editor</strong> (VS extension) to manage <code>data.db</code> directly for
+          debugging and testing.</p>
+        <img src="img/16-juin---1.jpg" alt="SQLite3 Editor screenshot" width="100%">
+      </li>
+
+      <li>
+        <h4>📚 Migrated Quiz Data to SQLite</h4>
+        <p>Moved quizzes data from <code>quizzes.json</code> to the new <code>quizzes</code> table for faster,
+          structured queries.</p>
+        <pre><code><span style="color: green;">// Get each Quiz by Category ID</span>
+ fastify.get('/api/quizzes/:categoryId', async (req, reply) => {
+    const { categoryId } = req.params
+    const quizzes = db.prepare(
+      'SELECT id, title, question_count FROM quizzes WHERE category_id = ?'
+    ).all(categoryId)
+    if (!quizzes || quizzes.length === 0) {
+      return reply.code(404).send({ error: 'No quizzes found for this category' })
+    }
+    return reply.send(quizzes)
+ })</code></pre>
+        <pre><code><span style="color: green;">  // Get All Quizzes Grouped by Category</span>
+ fastify.get('/api/quizzes', async (req, reply) => {
+    const rows = db.prepare('SELECT * FROM quizzes').all()
+    const grouped = {}
+    for (const quiz of rows) {
+      const catId = quiz.category_id
+      if (!grouped[catId]) grouped[catId] = []
+      grouped[catId].push({
+        id: quiz.id,
+        title: quiz.title,
+        questions: quiz.question_count
+      })
+    }
+    return reply.send(grouped)
+ })</code></pre>
+      </li>
+
+      <li>
+        <h4>Importing Questions JSON into SQLite</h4>
+        <pre><code>fastify.get('/api/questions/:quizId', async (req, reply) => {
+    const { quizId } = req.params;
+    const rows = db.prepare(
+      'SELECT id, question, options, answer FROM questions WHERE quiz_id = ?'
+    ).all(quizId);
+    if (!rows || rows.length === 0) {
+      return reply.code(404).send({ error: 'No questions found for this quiz' });
+    }
+    const questions = rows.map(q => ({
+      question: q.question,
+      options: JSON.parse(q.options),
+      answer: q.answer
+    }));
+    return reply.send(questions);
+ });</code></pre>
+      </li>
+    </ol>
+
+    <h3>🧠 Key Learnings</h3>
+    <ul>
+      <p>
+        - Learned to transition from temporary JSON-based user data handling to using a reliable and fast SQLite database
+        with <code>better-sqlite3</code>.
+      </p>
+      <p>
+        - Practiced writing SQL queries, designing a basic schema, and integrating it with Fastify routes for secure auth.
+        The <code>SQLite3 Editor</code> tool was extremely helpful for real-time database debugging.
+      </p>
+      <p>
+        - Migrating quizzes to SQLite improved data access speed, maintainability, and opened doors for future features
+        like
+        category filtering and quiz management.
+      </p>
+      <p>- Transitioned from JSON-based storage to SQLite DB for users, quizzes, and questions for better structure,
+        security, and performance.</p>
+      <p>- Leveraged <code>better-sqlite3</code> for simple, synchronous DB integration with Fastify.</p>
+      <p>- Used transactions to optimize bulk data inserts, and JSON strings to store arrays inside SQLite.</p>
+    </ul>
+
+    <h3>🔜 What’s Next (Day 6 Preview)</h3>
+    <p>
+      Next time, ....:
+    </p>
+    <ul>
+      <li>🔐 ......</li>
+      <li>📊 ......</li>
+    </ul>
+  </div>
+
+
+
+
+
+  <footer>
+    <p>Maintained by Zakaria Tanan — <a href="mailto:tananzakaria630@gmail.com">tananzakaria630@gmail.com</a></p>
+  </footer>
+
+  <script>
+    function showLog(id) {
+      document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+    }
+
+    // Show June 10 log by default
+    window.onload = () => showLog('log16');
+  </script>
 </body>
 
 </html>
