@@ -658,16 +658,38 @@ code .
     return reply.send(questions);
  });</code></pre>
       </li>
+
+      <li>
+        <h4>🧩 Refactored Frontend State with Pinia & Dynamic Components</h4>
+        <p>Replaced static quiz handling with a fully dynamic structure using Pinia store and Vue components.</p>
+        <ul>
+          <li><strong>QuizQuestion.vue</strong>: Sets quiz title
+            dynamically before redirecting to results.</li>
+          <li><strong>Result.vue</strong>: Displays score, quiz title, and a formatted date. Reads data directly from
+            Pinia store.</li>
+          <li><strong>stores/quiz.js</strong>: Updated state to include <code>quizTitle</code>, and Added
+            <code>setResult</code> action.
+          </li>
+        </ul>
+        <br>
+        <p>This fully decouples the frontend from static data, using real-time quiz content and state handling from
+          SQLite-powered API routes.</p>
+        <img src="img/16-juin---2.jpg" alt="Result.vue component" width="100%">
+      </li>
     </ol>
+
+
 
     <h3>🧠 Key Learnings</h3>
     <ul>
       <p>
-        - Learned to transition from temporary JSON-based user data handling to using a reliable and fast SQLite database
+        - Learned to transition from temporary JSON-based user data handling to using a reliable and fast SQLite
+        database
         with <code>better-sqlite3</code>.
       </p>
       <p>
-        - Practiced writing SQL queries, designing a basic schema, and integrating it with Fastify routes for secure auth.
+        - Practiced writing SQL queries, designing a basic schema, and integrating it with Fastify routes for secure
+        auth.
         The <code>SQLite3 Editor</code> tool was extremely helpful for real-time database debugging.
       </p>
       <p>
@@ -681,23 +703,42 @@ code .
       <p>- Used transactions to optimize bulk data inserts, and JSON strings to store arrays inside SQLite.</p>
     </ul>
 
-    <h3>🔜 What’s Next (Day 6 Preview)</h3>
-    <p>
-      Next time, ....:
-    </p>
+    <h3>✅ Project Complete</h3>
     <ul>
-      <li>🔐 ......</li>
-      <li>📊 ......</li>
+      <li>
+        The entire learning project is now complete, featuring:
+        <ul>
+          <li>User authentication with secure login and registration</li>
+          <li>Design and implementation of the quiz database schema</li>
+          <li>Development of API endpoints for dynamic quiz and question retrieval</li>
+          <li>State management using Pinia for seamless frontend data handling</li>
+          <li>Reusable Vue components for quizzes and result displays</li>
+          <li>Robust user input handling, including validation and confirmation dialogs</li>
+          <li>Dynamic result presentation with quiz titles and timestamps</li>
+        </ul>
+      </li>
+      <li> This full-stack application delivers a cohesive and interactive quiz experience by integrating backend and
+        frontend functionalities.
+      </li>
+      <li>
+        Looking ahead, future enhancements may include integrating SQLite to persistently store quiz results. This would
+        enable:
+        <ul>
+          <li>Building a user dashboard to track quiz history and progress</li>
+          <li>Implementing a <strong>results</strong> table for per-user score storage</li>
+          <li>Adding API routes to fetch past results by user email</li>
+        </ul>
+      </li>
     </ul>
+
+
   </div>
-
-
-
 
 
   <footer>
     <p>Maintained by Zakaria Tanan — <a href="mailto:tananzakaria630@gmail.com">tananzakaria630@gmail.com</a></p>
   </footer>
+
 
   <script>
     function showLog(id) {
